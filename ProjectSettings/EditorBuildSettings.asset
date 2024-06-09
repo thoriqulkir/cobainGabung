@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Kamartidur2.unity
-    guid: 6292c9aaf42a0004a9a891f78697e20d
+    path: Assets/Scenes/Cutscene.unity
+    guid: d302a1c4c42ff3a4e93a706235e289df
   - enabled: 1
     path: Assets/Scenes/Kamartidur.unity
-    guid: d302a1c4c42ff3a4e93a706235e289df
+    guid: 403a88737b0c9b540aabd90db73b6d5b
+  - enabled: 1
+    path: Assets/Scenes/Kamartidur2.unity
+    guid: 6292c9aaf42a0004a9a891f78697e20d
   - enabled: 1
     path: Assets/Scenes/Ruangtengah.unity
     guid: 2d1ed059bd4fba04da21a71fed8456bf
