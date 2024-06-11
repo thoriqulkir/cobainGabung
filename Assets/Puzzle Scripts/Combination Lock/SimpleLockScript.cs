@@ -8,13 +8,14 @@ public class SimpleLockScript : MonoBehaviour
     public bool interactable = true;
     public GameObject lockCanvas;
     public Text[] _text;
-    public Sprite unlockSprite;
-
     public string password;
     public string[] lockCharacterChoices;
     public int[] _lockCharacterNumbers;
     public string _insertedPass;
 
+    // Event callback untuk memberi tahu Masukpintu.cs bahwa puzzle berhasil diselesaikan
+    public delegate void PuzzleCompletedHandler();
+    public event PuzzleCompletedHandler OnPuzzleCompleted;
 
     void Start()
     {
@@ -68,7 +69,8 @@ public class SimpleLockScript : MonoBehaviour
         interactable = false;
         StopInteract();
 
-        gameObject.GetComponent<SpriteRenderer>().sprite = unlockSprite;
+        // Memanggil event callback saat puzzle berhasil diselesaikan
+        OnPuzzleCompleted?.Invoke();
     }
 
 
