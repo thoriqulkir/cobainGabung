@@ -2600,6 +2600,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1913495002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1158471459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1158471462}
+  - component: {fileID: 1158471461}
+  - component: {fileID: 1158471460}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1158471460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158471459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1158471461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158471459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1158471462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158471459}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174977854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,8 +3444,8 @@ GameObject:
   - component: {fileID: 1409176280}
   - component: {fileID: 1409176279}
   - component: {fileID: 1409176278}
-  - component: {fileID: 1409176276}
   - component: {fileID: 1409176281}
+  - component: {fileID: 1409176276}
   m_Layer: 0
   m_Name: PintuTengah3
   m_TagString: Untagged
@@ -3530,11 +3598,11 @@ MonoBehaviour:
   - {fileID: 1893390064}
   password: FD35
   lockCharacterChoices:
-  - ABCDEF12345
-  - ABCDEF12345
-  - ABCDEF12345
-  - ABCDEF12345
-  _lockCharacterNumbers: 0500000003000000080000000a000000
+  - 1UW9FO
+  - 9DE210P
+  - M9KL3Z
+  - ABC345
+  _lockCharacterNumbers: 04000000010000000400000005000000
   _insertedPass: 
 --- !u!1 &1456722394
 GameObject:
@@ -5508,3 +5576,4 @@ SceneRoots:
   - {fileID: 1594390300}
   - {fileID: 1003867216}
   - {fileID: 273497080}
+  - {fileID: 1158471462}

@@ -13,16 +13,24 @@ public class SimpleLockScript : MonoBehaviour
     public int[] _lockCharacterNumbers;
     public string _insertedPass;
 
-    // Event callback untuk memberi tahu Masukpintu.cs bahwa puzzle berhasil diselesaikan
+    public static bool isPuzzleSolved = false; // Variabel statis untuk menyimpan status puzzle
+
     public delegate void PuzzleCompletedHandler();
     public event PuzzleCompletedHandler OnPuzzleCompleted;
 
     void Start()
     {
-        _lockCharacterNumbers = new int[password.Length];
-        UpdateUI();
+        if (isPuzzleSolved)
+        {
+            interactable = false;
+            gameObject.SetActive(false); // Atau set state yang sesuai jika puzzle sudah selesai
+        }
+        else
+        {
+            _lockCharacterNumbers = new int[password.Length];
+            UpdateUI();
+        }
     }
-    
 
     public void ChangeInsertedPass(int position, bool isNext)
     {
@@ -46,7 +54,6 @@ public class SimpleLockScript : MonoBehaviour
         CheckPass();
         UpdateUI();
     }
-    
 
     public void CheckPass()
     {
@@ -67,29 +74,24 @@ public class SimpleLockScript : MonoBehaviour
     public void Unlock()
     {
         interactable = false;
+        isPuzzleSolved = true; // Update status puzzle
         StopInteract();
-
-        // Memanggil event callback saat puzzle berhasil diselesaikan
         OnPuzzleCompleted?.Invoke();
     }
-
 
     public void UpdateUI()
     {
         int _length = _text.Length;
-
         for (int i = 0; i < _length; i++)
         {
             _text[i].text = lockCharacterChoices[i][_lockCharacterNumbers[i]].ToString();
         }
     }
 
-
     private void OnMouseDown()
     {
         Interact();
     }
-
 
     public void Interact()
     {
@@ -113,5 +115,4 @@ public class SimpleLockScript : MonoBehaviour
     {
         ChangeInsertedPass(position, true);
     }
-
 }

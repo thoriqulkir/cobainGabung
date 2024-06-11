@@ -12,10 +12,9 @@ public class Masukpintu : MonoBehaviour
 
     public static bool kunciKamarDiambil = false;
     public static bool lockpickDiambil = false;
+    public static bool isPuzzleSolved = false;
 
     public SimpleLockScript simpleLockScript;
-
-    //public MonologPuzzle monologScript;
 
     private void OnTriggerEnter2D(Collider2D col) 
     {
@@ -56,21 +55,15 @@ public class Masukpintu : MonoBehaviour
         else if (col.GetComponent<PintuRumah>())
         {
             scenetoload = "Ruangtengah3";
-            bolehmasuk = true;
+            bolehmasuk = false;
         }
         else if (col.GetComponent<PintuTengah3>())
         {
-            // if (!lockpickDiambil)
-            // {
-            //     monologScript.dialog = new string[] { "Pintu ini terkunci dengan kombinasi." };
-            //     monologScript.playerisclose = true; // Pastikan player sedang dekat dengan pintu
-            //     monologScript.dialogpanel.SetActive(true); // Tampilkan panel dialog
-            // }
             isClose = true;
-            bolehmasuk = false; // Set agar pemain tidak langsung pindah scene
+            bolehmasuk = false;
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D col) 
     {
         if (col.GetComponent<PintuKamar>() || col.GetComponent<PintuTengah>() || col.GetComponent<PintuKamarmandi>() 
@@ -78,15 +71,9 @@ public class Masukpintu : MonoBehaviour
         {
             bolehmasuk = false;
             isClose = false;
-            // if (monologScript != null)
-            // {
-            //     monologScript.playerisclose = false;
-            //     monologScript.zeroText(); // Reset teks monolog saat pemain menjauhi pintu
-            // }
-            
         }
     }
-    
+
     private void Update() 
     {
         if (isClose && Input.GetKeyDown(KeyCode.E))
@@ -106,10 +93,8 @@ public class Masukpintu : MonoBehaviour
 
     private void HandlePuzzleCompleted()
     {
-        // Puzzle selesai, izinkan masuk
-        simpleLockScript.OnPuzzleCompleted -= HandlePuzzleCompleted; // Unsubscribe dari event
+        simpleLockScript.OnPuzzleCompleted -= HandlePuzzleCompleted;
 
-        // Simpan status pintu terbuka
         if (scenetoload == "Ruangtengah")
         {
             kunciKamarDiambil = true;
@@ -118,8 +103,12 @@ public class Masukpintu : MonoBehaviour
         {
             lockpickDiambil = true;
         }
-
+        else if (scenetoload == "Perumahan")
+        {
+            isPuzzleSolved = true;
+        }
         scenetoload = "Perumahan";
         bolehmasuk = true;
+        isPuzzleSolved = true;
     }
 }
