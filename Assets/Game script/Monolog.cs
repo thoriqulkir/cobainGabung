@@ -29,6 +29,18 @@ public class Monolog : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (diloguetext.text == dialog[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                diloguetext.text = dialog[index];
+            }
+        }
     }
     public void zeroText() 
     {
