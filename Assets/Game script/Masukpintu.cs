@@ -85,7 +85,7 @@ public class Masukpintu : MonoBehaviour
         
         if (bolehmasuk && Input.GetKey(KeyCode.E))
         {
-            if (scenetoload == "Perumahan")
+            if (scenetoload == "Cutscene Perumahan")
             {
                 SaveCheckpoint();
             }
