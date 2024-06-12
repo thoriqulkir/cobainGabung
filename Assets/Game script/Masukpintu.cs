@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +11,6 @@ public class Masukpintu : MonoBehaviour
 
     public static bool kunciKamarDiambil = false;
     public static bool lockpickDiambil = false;
-    public static bool isPuzzleSolved = false;
 
     public SimpleLockScript simpleLockScript;
 
@@ -87,6 +85,10 @@ public class Masukpintu : MonoBehaviour
         
         if (bolehmasuk && Input.GetKey(KeyCode.E))
         {
+            if (scenetoload == "Perumahan")
+            {
+                SaveCheckpoint();
+            }
             SceneManager.LoadScene(scenetoload);
         }
     }
@@ -103,12 +105,26 @@ public class Masukpintu : MonoBehaviour
         {
             lockpickDiambil = true;
         }
-        else if (scenetoload == "Perumahan")
-        {
-            isPuzzleSolved = true;
-        }
+
         scenetoload = "Perumahan";
         bolehmasuk = true;
-        isPuzzleSolved = true;
+    }
+
+    private void SaveCheckpoint()
+    {
+        PlayerPrefs.SetInt("CheckpointReached", 1);
+        PlayerPrefs.SetInt("PuzzleSolved", SimpleLockScript.isPuzzleSolved ? 1 : 0);
+        PlayerPrefs.Save();
+        Debug.Log("Game Saved.");
+    }
+
+    public static void LoadCheckpoint()
+    {
+        if (PlayerPrefs.GetInt("CheckpointReached", 0) == 1)
+        {
+            SimpleLockScript.isPuzzleSolved = PlayerPrefs.GetInt("PuzzleSolved", 0) == 1;
+            // Load other data if needed
+            Debug.Log("Game Loaded.");
+        }
     }
 }

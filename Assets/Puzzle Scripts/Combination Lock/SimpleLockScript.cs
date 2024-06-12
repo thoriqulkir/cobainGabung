@@ -20,6 +20,9 @@ public class SimpleLockScript : MonoBehaviour
 
     void Start()
     {
+        // Muat status puzzle dari PlayerPrefs
+        isPuzzleSolved = PlayerPrefs.GetInt("PuzzleSolved", 0) == 1;
+        
         if (isPuzzleSolved)
         {
             interactable = false;
@@ -74,7 +77,9 @@ public class SimpleLockScript : MonoBehaviour
     public void Unlock()
     {
         interactable = false;
-        isPuzzleSolved = true; // Update status puzzle
+        isPuzzleSolved = true;
+        PlayerPrefs.SetInt("PuzzleSolved", 1); // Simpan status puzzle
+        PlayerPrefs.Save();
         StopInteract();
         OnPuzzleCompleted?.Invoke();
     }
