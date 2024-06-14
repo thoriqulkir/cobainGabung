@@ -10,14 +10,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        Time.timeScale = 1f;
     }
 
     public void LoadGame()
     {
         if (PlayerPrefs.GetInt("CheckpointReached", 0) == 1)
         {
-            // Load the checkpoint scene, for example "Ruangtengah"
             Masukpintu.LoadCheckpoint();
             SceneManager.LoadScene("Perumahan");
             Debug.Log("Loading saved game...");

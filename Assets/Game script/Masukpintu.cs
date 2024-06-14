@@ -14,6 +14,8 @@ public class Masukpintu : MonoBehaviour
 
     public SimpleLockScript simpleLockScript;
 
+    public MonologPuzzle monologPuzzle;
+
     private void OnTriggerEnter2D(Collider2D col) 
     {
         if (col.GetComponent<PintuKamar>())
@@ -59,6 +61,20 @@ public class Masukpintu : MonoBehaviour
         {
             isClose = true;
             bolehmasuk = false;
+
+            simpleLockScript = col.GetComponent<SimpleLockScript>();
+            monologPuzzle = FindObjectOfType<MonologPuzzle>();
+            simpleLockScript.monologPuzzle = monologPuzzle;
+        }
+        else if (col.GetComponent<LorongKota>())
+        {
+            scenetoload = "Kota";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<GerbangSekolah>())
+        {
+            scenetoload = "Sekolah";
+            bolehmasuk = true;
         }
     }
 
@@ -89,6 +105,14 @@ public class Masukpintu : MonoBehaviour
             {
                 SaveCheckpoint();
             }
+
+            // Save lives remaining before loading new scene
+            LifeCounter lifeCounter = FindObjectOfType<LifeCounter>();
+            if (lifeCounter != null)
+            {
+                PlayerPrefs.SetInt("LivesRemaining", lifeCounter.livesRemaining);
+            }
+
             SceneManager.LoadScene(scenetoload);
         }
     }
@@ -97,16 +121,16 @@ public class Masukpintu : MonoBehaviour
     {
         simpleLockScript.OnPuzzleCompleted -= HandlePuzzleCompleted;
 
-        if (scenetoload == "Ruangtengah")
+        if (scenetoload == "Ruangtengah" || scenetoload == "Ruangtengah2")
         {
             kunciKamarDiambil = true;
         }
-        else if (scenetoload == "Kamarmandi")
+        else if (scenetoload == "Kamarmandi" || scenetoload == "Ruangtengah2")
         {
             lockpickDiambil = true;
         }
 
-        scenetoload = "Perumahan";
+        scenetoload = "Cutscene Perumahan";
         bolehmasuk = true;
     }
 
@@ -115,7 +139,7 @@ public class Masukpintu : MonoBehaviour
         PlayerPrefs.SetInt("CheckpointReached", 1);
         PlayerPrefs.SetInt("PuzzleSolved", SimpleLockScript.isPuzzleSolved ? 1 : 0);
         PlayerPrefs.Save();
-        Debug.Log("Game Saved.");
+        Debug.Log("Game Saved");
     }
 
     public static void LoadCheckpoint()
@@ -124,7 +148,7 @@ public class Masukpintu : MonoBehaviour
         {
             SimpleLockScript.isPuzzleSolved = PlayerPrefs.GetInt("PuzzleSolved", 0) == 1;
             // Load other data if needed
-            Debug.Log("Game Loaded.");
+            Debug.Log("Save Loaded");
         }
     }
 }
