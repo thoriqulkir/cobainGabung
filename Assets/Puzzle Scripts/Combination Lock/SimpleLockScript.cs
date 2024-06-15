@@ -18,10 +18,15 @@ public class SimpleLockScript : MonoBehaviour
     public delegate void PuzzleCompletedHandler();
     public event PuzzleCompletedHandler OnPuzzleCompleted;
 
+    public bool hasInteractedBefore = false;
+    public MonologPuzzle monologPuzzle;
+
     void Start()
     {
         // Muat status puzzle dari PlayerPrefs
         isPuzzleSolved = PlayerPrefs.GetInt("PuzzleSolved", 0) == 1;
+
+        hasInteractedBefore = PlayerPrefs.GetInt(gameObject.name + "_InteractedBefore", 0) == 1;
         
         if (isPuzzleSolved)
         {
@@ -95,20 +100,46 @@ public class SimpleLockScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Interact();
+        //Interact();
     }
 
     public void Interact()
     {
         if (interactable)
         {
-            lockCanvas.SetActive(true);
+            if (!hasInteractedBefore)
+            {
+                // Panggil monolog di sini jika interaksi pertama kali
+                if (monologPuzzle != null)
+                {
+                    monologPuzzle.StartMonolog(() =>
+                    {
+                        lockCanvas.SetActive(true);
+                        Time.timeScale = 0f; // Menghentikan waktu saat puzzle aktif
+                    });
+                    hasInteractedBefore = true;
+                    PlayerPrefs.SetInt(gameObject.name + "_InteractedBefore", 1); // Simpan status interaksi pertama kali
+                    PlayerPrefs.Save();
+                }
+                else
+                {
+                    Debug.LogWarning("script MonologPuzzle tidak ditemukan");
+                    lockCanvas.SetActive(true);
+                    Time.timeScale = 0f; // Menghentikan waktu saat puzzle aktif
+                }
+            }
+            else
+            {
+                lockCanvas.SetActive(true);
+                Time.timeScale = 0f; // Menghentikan waktu saat puzzle aktif
+            }
         }
     }
 
     public void StopInteract()
     {
         lockCanvas.SetActive(false);
+        Time.timeScale = 1f; // Melanjutkan waktu saat puzzle tidak aktif
     }
 
     public void OnNextButtonPressed(int position)

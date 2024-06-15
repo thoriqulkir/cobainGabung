@@ -11,6 +11,8 @@ public class MonologPuzzle : MonoBehaviour
     public string[] dialog;
     private int index;
 
+    private Action onMonologComplete; // Callback ketika monolog selesai
+
     public float wordspeed;
     public bool playerisclose;
 
@@ -29,7 +31,7 @@ public class MonologPuzzle : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
-        if (Input.GetMouseButtonDown(0))
+        if (dialogpanel.activeInHierarchy && Input.GetMouseButtonDown(0))
         {
             if (diloguetext.text == dialog[index])
             {
@@ -42,12 +44,22 @@ public class MonologPuzzle : MonoBehaviour
             }
         }
     }
+
+    public void StartMonolog(Action onComplete)
+    {
+        onMonologComplete = onComplete;
+        dialogpanel.SetActive(true);
+        StartCoroutine(Typing());
+    }
+
     public void zeroText() 
     {
         diloguetext.text = "";
         index = 0;
         dialogpanel.SetActive(false);
+        onMonologComplete?.Invoke(); // Panggil callback ketika monolog selesai
     }
+
     IEnumerator Typing()
     {
         foreach (char letter in dialog[index].ToCharArray())
@@ -56,6 +68,7 @@ public class MonologPuzzle : MonoBehaviour
             yield return new WaitForSeconds(wordspeed);
         }
     }
+
     public void NextLine() 
     {
         if (index < dialog.Length - 1)
@@ -69,6 +82,7 @@ public class MonologPuzzle : MonoBehaviour
             zeroText();
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.CompareTag("Player"))
@@ -76,6 +90,7 @@ public class MonologPuzzle : MonoBehaviour
             playerisclose = true;
         }
     }
+    
     private void OnTriggerExit2D(Collider2D other) 
     {
         if (other.CompareTag("Player"))

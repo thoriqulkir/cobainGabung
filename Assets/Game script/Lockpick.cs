@@ -6,20 +6,36 @@ public class Lockpick : MonoBehaviour
 {
     public GameObject PintuTengah2;
     public Masukpintu masukPintuScript;
+    public Monolog monologScript;
     
     public bool playerisclose;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerisclose == true)
+        if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {
             Debug.Log("Mendapat Lockpick dari laci");
 
-            this.gameObject.SetActive(false);
+            // Panggil metode StartMonolog setelah mengambil kunci
+            if (monologScript != null)
+            {
+                monologScript.isKeyObject = true;
+                monologScript.StartMonolog();
+            }
 
-            Masukpintu.lockpickDiambil = true;
-
+            // Gunakan coroutine untuk menunda penghilangan objek
+            StartCoroutine(HideObjectAfterDelay());
         }
+    }
+
+    private IEnumerator HideObjectAfterDelay()
+    {
+        // Tunggu sebentar agar monolog bisa muncul
+        yield return new WaitForSeconds(1.5f);
+
+        this.gameObject.SetActive(false);
+
+        Masukpintu.lockpickDiambil = true;
     }
     
     private void OnTriggerEnter2D(Collider2D col)

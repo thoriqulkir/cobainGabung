@@ -6,20 +6,36 @@ public class KunciKamar : MonoBehaviour
 {
     public GameObject PintuKamar;
     public Masukpintu masukPintuScript;
+    public Monolog monologScript;
     
     public bool playerisclose;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerisclose == true)
+        if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {
             Debug.Log("Mendapat Kunci Kamar");
 
-            this.gameObject.SetActive(false);
+            // Panggil metode StartMonolog setelah mengambil kunci
+            if (monologScript != null)
+            {
+                monologScript.isKeyObject = true;
+                monologScript.StartMonolog();
+            }
 
-            Masukpintu.kunciKamarDiambil = true;
-
+            // Gunakan coroutine untuk menunda penghilangan objek
+            StartCoroutine(HideObjectAfterDelay());
         }
+    }
+
+    private IEnumerator HideObjectAfterDelay()
+    {
+        // Tunggu sebentar agar monolog bisa muncul
+        yield return new WaitForSeconds(1.5f);
+
+        this.gameObject.SetActive(false);
+
+        Masukpintu.kunciKamarDiambil = true;
     }
     
     private void OnTriggerEnter2D(Collider2D col)

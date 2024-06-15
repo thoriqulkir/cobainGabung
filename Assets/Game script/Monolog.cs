@@ -14,12 +14,17 @@ public class Monolog : MonoBehaviour
 
     public float wordspeed;
     public bool playerisclose;
+    public bool isKeyObject = false;  // New variable to check if the object requires a key
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {
+            if (isKeyObject == true && (Masukpintu.kunciKamarDiambil || Masukpintu.lockpickDiambil))
+            {
+                return; // Do not display dialog if items are taken for key objects
+            }
+
             if (dialogpanel.activeInHierarchy)
             {
                 zeroText();
@@ -30,7 +35,7 @@ public class Monolog : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
-        if (Input.GetMouseButtonDown(0))
+        if (dialogpanel.activeInHierarchy && Input.GetMouseButtonDown(0))
         {
             if (diloguetext.text == dialog[index])
             {
@@ -51,12 +56,23 @@ public class Monolog : MonoBehaviour
             triggerisclose.SetActive(false);
         }
     }
-    public void zeroText() 
+    
+    public void StartMonolog()
+    {
+        if (!dialogpanel.activeInHierarchy)
+        {
+            dialogpanel.SetActive(true);
+            StartCoroutine(Typing());
+        }
+    }
+    
+    public void zeroText()
     {
         diloguetext.text = "";
         index = 0;
         dialogpanel.SetActive(false);
     }
+    
     IEnumerator Typing()
     {
         foreach (char letter in dialog[index].ToCharArray())
@@ -65,7 +81,8 @@ public class Monolog : MonoBehaviour
             yield return new WaitForSeconds(wordspeed);
         }
     }
-    public void NextLine() 
+    
+    public void NextLine()
     {
         if (index < dialog.Length - 1)
         {
@@ -78,14 +95,16 @@ public class Monolog : MonoBehaviour
             zeroText();
         }
     }
-    private void OnTriggerEnter2D(Collider2D other) 
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerisclose = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D other) 
+    
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
