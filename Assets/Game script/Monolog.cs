@@ -8,6 +8,7 @@ public class Monolog : MonoBehaviour
 {
     public GameObject dialogpanel;
     public Text diloguetext;
+    public GameObject triggerisclose;
     public string[] dialog;
     private int index;
 
@@ -40,6 +41,14 @@ public class Monolog : MonoBehaviour
                 StopAllCoroutines();
                 diloguetext.text = dialog[index];
             }
+        }
+        if (playerisclose == true)
+        {
+            triggerisclose.SetActive(true);
+        }
+        else
+        {
+            triggerisclose.SetActive(false);
         }
     }
     public void zeroText() 
