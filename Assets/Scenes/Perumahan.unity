@@ -1803,7 +1803,7 @@ Transform:
   m_GameObject: {fileID: 922675657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.93, y: 5.19, z: -10}
+  m_LocalPosition: {x: 33.93, y: 6.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2524,7 +2524,7 @@ Transform:
   m_GameObject: {fileID: 1103110038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.93, y: 5.19, z: -10}
+  m_LocalPosition: {x: 33.93, y: 6.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3716,7 +3716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2760533449823451698, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.19
+      value: 6.92
       objectReference: {fileID: 0}
     - target: {fileID: 2760533449823451698, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4005,6 +4005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogpanel: {fileID: 914594404}
   diloguetext: {fileID: 936192863}
+  triggerisclose: {fileID: 0}
   dialog:
   - Untuk apa aku masuk kembali?
   wordspeed: 0.06
