@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("CheckpointReached", 0) == 1)
         {
-            Masukpintu.LoadCheckpoint();
-            SceneManager.LoadScene("Perumahan");
+            string lastScene = PlayerPrefs.GetString("LastScene");
+            SceneManager.LoadScene(lastScene);
+            StartCoroutine(LoadPlayerPosition());
+
             Debug.Log("Loading saved game...");
         }
         else
@@ -31,6 +33,13 @@ public class GameManager : MonoBehaviour
             }
             Debug.Log("No saved game");
         }
+    }
+
+    private IEnumerator LoadPlayerPosition()
+    {
+        yield return new WaitForSeconds(0.1f); // Tunggu hingga scene selesai dimuat
+
+        Masukpintu.LoadCheckpoint();
     }
     
     public void NewGame()

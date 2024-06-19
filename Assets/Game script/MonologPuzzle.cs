@@ -19,6 +19,11 @@ public class MonologPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SimpleClock.isPuzzleSolved)
+        {
+            return; // Jangan tampilkan dialog jika puzzle sudah selesai
+        }
+        
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {
             if (dialogpanel.activeInHierarchy)

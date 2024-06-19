@@ -157,6 +157,7 @@ MonoBehaviour:
   hourHand: {fileID: 1564784279}
   minuteHand: {fileID: 800385510}
   winText: {fileID: 276606404}
+  clockCanvas: {fileID: 0}
 --- !u!212 &154176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ Transform:
   m_GameObject: {fileID: 800385508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1162,7 +1163,7 @@ Transform:
   m_GameObject: {fileID: 1564784277}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.02, z: 0}
+  m_LocalPosition: {x: -0.83, y: 0.02, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
