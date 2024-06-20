@@ -13,14 +13,36 @@ public class Masukpintu : MonoBehaviour
     public static bool lockpickDiambil = false;
     public static bool kunciKepsekDiambil = false;
     public static bool kunciRSDiambil = false;
+    public static bool puzzlePieceDiambil = false;
+    private static bool jigsawPuzzleCompleted = false;
+    public static bool kunciLabDiambil = false;
+    public static bool cairanGembokDiambil = false;
 
     public SimpleLockScript simpleLockScript;
 
     public MonologPuzzle monologPuzzle;
 
+    public JigsawScript jigsawScript;
+
+    [SerializeField]
+    private GameObject fakeJigsawCanvas;
+
+    [SerializeField]
+    private GameObject realJigsawCanvas;
+
     void Start()
     {
-        // kunciRSDiambil = PlayerPrefs.GetInt("KunciRSDiambil", 0) == 1;
+        fakeJigsawCanvas.SetActive(false);
+        realJigsawCanvas.SetActive(false);
+        
+        if (PlayerPrefs.GetInt("PipePuzzleCompleted", 0) == 1)
+        {
+            cairanGembokDiambil = true;
+            SaveCheckpoint();
+            // Reset status puzzle jika diperlukan
+            // PlayerPrefs.SetInt("PipePuzzleCompleted", 0);
+            // PlayerPrefs.Save();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col) 
@@ -199,21 +221,137 @@ public class Masukpintu : MonoBehaviour
         }
         else if (col.GetComponent<JalanKeRS>())
         {
-            scenetoload = "kota";
+            scenetoload = "RumahSakit";
             bolehmasuk = true;
         }
-        // else if (col.GetComponent<PintuRS>())
-        // {
-        //     if (kunciRSDiambil)
-        //     {
-        //         sceneToLoad = "RumahSakit";
-        //         bolehMasuk = true;
-        //     }
-        //     else
-        //     {
-        //         bolehMasuk = false;
-        //     }
-        // }
+        else if (col.GetComponent<PintuMasukRS>())
+        {
+            if (kunciRSDiambil)
+            {
+                scenetoload = "RSLt1";
+                bolehmasuk = true;
+            }
+            else
+            {
+                bolehmasuk = false;
+            }
+        }
+        else if (col.GetComponent<PintuRSLt1>())
+        {
+            isClose = true;
+            bolehmasuk = false;
+
+            jigsawScript = col.GetComponent<JigsawScript>();
+        }
+        else if (col.GetComponent<TanggaRSKeLt2>())
+        {
+            scenetoload = "RSLt2";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<TanggaRSKeLt1>())
+        {
+            scenetoload = "RSLt1 Dari Lt2";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuRuangDokter>())
+        {
+            scenetoload = "RSLt1 Dari RuangDokter";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<TanggaRSKeLt3>())
+        {
+            scenetoload = "RSLt3";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuRSLt2>())
+        {
+            if (kunciLabDiambil)
+            {
+                scenetoload = "Laboratorium";
+                bolehmasuk = true;
+            }
+            else
+            {
+                bolehmasuk = false;
+            }
+        }
+        else if (col.GetComponent<PintuKeRP1>())
+        {
+            scenetoload = "RuangPasien1";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuKeRP2>())
+        {
+            scenetoload = "RuangPasien2";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuKeRP3>())
+        {
+            scenetoload = "RuangPasien3";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuKeRP4>())
+        {
+            scenetoload = "RuangPasien4";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuRSLt3>())
+        {
+            if (cairanGembokDiambil)
+            {
+                scenetoload = "KamarMayat";
+                bolehmasuk = true;
+            }
+            else
+            {
+                bolehmasuk = false;
+            }
+        }
+        else if (col.GetComponent<TanggaRS3KeLt2>())
+        {
+            scenetoload = "RSLt2 Dari Lt3";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuKamarMayat>())
+        {
+            scenetoload = "RSLt3 Dari KamarMayat";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuRP3>())
+        {
+            scenetoload = "RSLt3 Dari RP3";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuRP4>())
+        {
+            scenetoload = "RSLt3 Dari P4";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuRP1>())
+        {
+            scenetoload = "RSLt2 Dari P1";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuRP2>())
+        {
+            scenetoload = "RSLt2 Dari P1";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuLab>())
+        {
+            scenetoload = "RSLt2 Dari Lab";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuKeluarRS>())
+        {
+            scenetoload = "RumahSakitKeluar";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<Brankas>())
+        {
+            isClose = true;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D col) 
@@ -226,7 +364,12 @@ public class Masukpintu : MonoBehaviour
             || col.GetComponent<PintuSekolahLt2>() || col.GetComponent<PintuKeKelas1>() || col.GetComponent<PintuKeKelas2>() 
             || col.GetComponent<PintuKeKelas3>() || col.GetComponent<PintuKeKelas4>() || col.GetComponent<PintuKelas1>() || col.GetComponent<PintuKelas2>() 
             || col.GetComponent<PintuKelas3>() || col.GetComponent<PintuKelas4>() || col.GetComponent<PintuKepsek>() || col.GetComponent<PintuPerpus>() 
-            || col.GetComponent<PintuWarehouse>() || col.GetComponent<JalanKeRS>() )
+            || col.GetComponent<PintuWarehouse>() || col.GetComponent<JalanKeRS>() || col.GetComponent<PintuMasukRS>() || col.GetComponent<PintuRSLt1>()
+            || col.GetComponent<TanggaRSKeLt2>() || col.GetComponent<TanggaRSKeLt1>() || col.GetComponent<PintuRuangDokter>() || col.GetComponent<TanggaRSKeLt3>() 
+            || col.GetComponent<PintuRSLt2>() || col.GetComponent<PintuKeRP1>() || col.GetComponent<PintuKeRP2>() || col.GetComponent<PintuKeRP3>() 
+            || col.GetComponent<PintuKeRP4>() || col.GetComponent<PintuRSLt3>() || col.GetComponent<TanggaRS3KeLt2>() || col.GetComponent<PintuKamarMayat>() 
+            || col.GetComponent<PintuRP3>() || col.GetComponent<PintuRP4>() || col.GetComponent<PintuRP1>() || col.GetComponent<PintuRP2>() 
+            || col.GetComponent<PintuLab>() || col.GetComponent<PintuKeluarRS>() || col.GetComponent<Brankas>())
         {
             bolehmasuk = false;
             isClose = false;
@@ -241,6 +384,20 @@ public class Masukpintu : MonoBehaviour
             {
                 simpleLockScript.OnPuzzleCompleted += HandlePuzzleCompleted;
                 simpleLockScript.Interact();
+            }
+
+            if (jigsawPuzzleCompleted)
+            {
+                bolehmasuk = true;
+                SceneManager.LoadScene("RuangDokter"); // Pindah ke scene tujuan
+            }
+            else if (puzzlePieceDiambil)
+            {
+                OpenRealPuzzle(); // Buka puzzle asli jika item telah ditemukan
+            }
+            else
+            {
+                OpenFakePuzzle(); // Buka puzzle palsu jika item belum ditemukan
             }
         }
         
@@ -257,6 +414,50 @@ public class Masukpintu : MonoBehaviour
         }
     }
 
+    private void OpenFakePuzzle()
+    {
+        fakeJigsawCanvas.SetActive(true); // Menampilkan Canvas fakeJigsaw
+        Time.timeScale = 0f; // Memberhentikan waktu di game
+    }
+
+    private void OpenRealPuzzle()
+    {
+        realJigsawCanvas.SetActive(true); // Menampilkan Canvas realJigsaw
+        Time.timeScale = 0f; // Memberhentikan waktu di game
+
+        Debug.Log("Initializing puzzle");
+        jigsawScript.InitializePuzzle();
+        jigsawScript.OnPuzzleCompleted += HandleJigsawPuzzleCompleted;
+    }
+
+    public void CloseFakePuzzleAndStartMonolog()
+    {
+        fakeJigsawCanvas.SetActive(false); // Menyembunyikan Canvas fakeJigsaw
+        Time.timeScale = 1f; // Melanjutkan waktu di game
+
+        // Memulai monolog setelah fakeJigsawCanvas ditutup
+        if (monologPuzzle != null)
+        {
+            monologPuzzle.StartMonolog(() =>
+            {
+                monologPuzzle.dialogpanel.SetActive(false);
+                // Callback setelah monolog selesai
+            });
+        }
+    }
+
+    private void HandleJigsawPuzzleCompleted()
+    {
+        jigsawScript.OnPuzzleCompleted -= HandleJigsawPuzzleCompleted;
+        
+        jigsawScript.StopInteract();
+        realJigsawCanvas.SetActive(false); // Menyembunyikan Canvas realJigsaw
+        Time.timeScale = 1f; // Melanjutkan waktu di game
+        jigsawPuzzleCompleted = true; // Set jigsawPuzzleCompleted true setelah puzzle selesai
+        SaveCheckpoint();
+        SceneManager.LoadScene("RuangDokter"); // Pindah ke scene tujuan
+    }
+
     private void HandlePuzzleCompleted()
     {
         simpleLockScript.OnPuzzleCompleted -= HandlePuzzleCompleted;
@@ -268,12 +469,24 @@ public class Masukpintu : MonoBehaviour
             SceneManager.LoadScene(sceneToLoad);
             bolehmasuk = true;
         }
+        else
+        {
+            StartCoroutine(ShowMonologAfterSceneLoad());
+        }
+    }
+
+    private IEnumerator ShowMonologAfterSceneLoad()
+    {
+        yield return null; // Tunggu satu frame untuk memastikan scene telah dimuat
+        monologPuzzle.MulaiMonologDiakhir();
     }
 
     public void SaveCheckpoint()
     {
         PlayerPrefs.SetInt("CheckpointReached", 1);
         PlayerPrefs.SetInt("PuzzleSolved", SimpleClock.isPuzzleSolved ? 1 : 0);
+        PlayerPrefs.SetInt("KunciRSDiambil", kunciRSDiambil ? 1 : 0);
+        PlayerPrefs.SetInt("PuzzleSolved", jigsawPuzzleCompleted ? 1 : 0);
         PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().name);
 
         // Simpan posisi pemain
@@ -292,6 +505,7 @@ public class Masukpintu : MonoBehaviour
         {
             SimpleLockScript.isPuzzleSolved = PlayerPrefs.GetInt("PuzzleSolved", 0) == 1;
             kunciRSDiambil = PlayerPrefs.GetInt("KunciRSDiambil", 0) == 1;
+            jigsawPuzzleCompleted = PlayerPrefs.GetInt("PuzzleSolved", 0) == 1;
 
             // Load posisi pemain
             Vector3 playerPosition;

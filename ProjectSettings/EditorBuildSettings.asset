@@ -98,4 +98,73 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/KotaDariSekolah.unity
     guid: a3ebc61850935b04fa1a2181b0ce87d6
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RumahSakit.unity
+    guid: 7bb2ab7acb03be34481841cb7c7dfaf8
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt1.unity
+    guid: dff8a89991686234b873182a243d52bb
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt1 Dari Lt2.unity
+    guid: e3c1c1c198e5f3440b656e45be064da5
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt1 Dari RuangDokter.unity
+    guid: fec769a1a67229e41bc968c703ead5ee
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt2.unity
+    guid: a990a09c9184cf4409d4b3f999fe4945
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RuangDokter.unity
+    guid: fd49dc70420ef104e92953d188bdb404
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/KamarMayat.unity
+    guid: 6d3f5b1c95d4d814eb4590b4457b9a74
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/Laboratorium.unity
+    guid: ec53696a433848f45888cef374be4b9b
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt2 Dari Lab.unity
+    guid: 1528034bdc3d26849b08706f7e49d0cc
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt2 Dari Lt3.unity
+    guid: ca577029db5b77045bde520787c20538
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt2 Dari RP1.unity
+    guid: 50ca877336136264595091d2e016ab8f
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt2 Dari RP2.unity
+    guid: bce35eedc1cdfdb47a31416081064a95
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt3 Dari KamarMayat.unity
+    guid: 68a43896e4068ae4cb648dee6cb8bc10
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt3 Dari RP3.unity
+    guid: 3a0a685832d15fa419744e3dcf88e52b
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt3 Dari RP4.unity
+    guid: fe0bd698d55df464390212c79f6bdad5
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RSLt3.unity
+    guid: 49b919c760810b441a777b9de5e3ab33
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RuangPasien1.unity
+    guid: 22c263bf85437bf438c4570b9a9f7ace
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RuangPasien2.unity
+    guid: 20bbd50e2d5d7514ba49fae8a013956e
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RuangPasien3.unity
+    guid: 2e23ddca8f1846a44a5ef8294cf19f8a
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RuangPasien4.unity
+    guid: cc669d381b190db4e99ecb3ceac0c2d7
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/RumahSakitKeluar.unity
+    guid: dfb16119f54346343a4b020a8ba53f5e
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/Pipes Puzzle.unity
+    guid: 89db3457a229d4d4f979a48f4028bf60
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/LaboratoriumDone.unity
+    guid: 38aa0191530e292468d4171809481d2a
   m_configObjects: {}

@@ -19,9 +19,29 @@ public class MonologPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Masukpintu.cairanGembokDiambil)
+        {
+            return;
+        }
+        
+        if (Masukpintu.kunciLabDiambil)
+        {
+            return;
+        }
+        
+        if (Masukpintu.puzzlePieceDiambil)
+        {
+            return;
+        }
+        
+        if (Masukpintu.kunciRSDiambil)
+        {
+            return;
+        }
+
         if (SimpleClock.isPuzzleSolved)
         {
-            return; // Jangan tampilkan dialog jika puzzle sudah selesai
+            return;
         }
         
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
@@ -55,6 +75,15 @@ public class MonologPuzzle : MonoBehaviour
         onMonologComplete = onComplete;
         dialogpanel.SetActive(true);
         StartCoroutine(Typing());
+    }
+
+    public void MulaiMonologDiakhir()
+    {
+        if (!dialogpanel.activeInHierarchy)
+        {
+            dialogpanel.SetActive(true);
+            StartCoroutine(Typing());
+        }
     }
 
     public void zeroText() 

@@ -29,6 +29,7 @@ public class KunciRS : MonoBehaviour
             // Panggil metode SaveCheckpoint dari Masukpintu
             if (masukPintuScript != null)
             {
+                Masukpintu.kunciRSDiambil = true;
                 masukPintuScript.SaveCheckpoint();
             }
         }

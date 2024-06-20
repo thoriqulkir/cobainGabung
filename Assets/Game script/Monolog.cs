@@ -16,8 +16,10 @@ public class Monolog : MonoBehaviour
     public bool playerisclose;
     public bool isKeyObject = false;  // New variable to check if the object requires a key
 
+    public event Action OnMonologCompleted;
+
     void Update()
-    {
+    {   
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {
             if (isKeyObject == true && (Masukpintu.kunciKamarDiambil || Masukpintu.lockpickDiambil))
@@ -71,6 +73,7 @@ public class Monolog : MonoBehaviour
         diloguetext.text = "";
         index = 0;
         dialogpanel.SetActive(false);
+        OnMonologCompleted?.Invoke();
     }
     
     IEnumerator Typing()

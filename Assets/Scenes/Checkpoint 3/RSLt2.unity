@@ -831,6 +831,56 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 189709219456735137, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
   m_PrefabInstance: {fileID: 1869487047}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &916078921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916078923}
+  - component: {fileID: 916078922}
+  m_Layer: 0
+  m_Name: MonologPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &916078922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916078921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6083b33894e80834faea54366a4462d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogpanel: {fileID: 2013894921}
+  diloguetext: {fileID: 721104894}
+  dialog:
+  - Pintu ini terkunci, aku membutuhkan kunci untuk membukanya
+  wordspeed: 0.06
+  playerisclose: 0
+--- !u!4 &916078923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916078921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922675657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,7 +2149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1670159045}
   - component: {fileID: 1670159044}
-  - component: {fileID: 1670159043}
   - component: {fileID: 1670159046}
   m_Layer: 0
   m_Name: PintuRSLt2
@@ -2108,26 +2157,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1670159043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670159042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d744c64072dcfd048bf7893bf7c492e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogpanel: {fileID: 2013894921}
-  diloguetext: {fileID: 721104894}
-  triggerisclose: {fileID: 544928102}
-  dialog:
-  - Pintu ini terkunci, aku membutuhkan kunci untuk membukanya
-  wordspeed: 0.06
-  playerisclose: 0
-  isKeyObject: 0
 --- !u!61 &1670159044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2733,7 +2762,7 @@ PrefabInstance:
     - target: {fileID: 6225911835686782229, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
       propertyPath: monologPuzzle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 916078922}
     - target: {fileID: 6225911835686782229, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
       propertyPath: monologScript
       value: 
@@ -3079,3 +3108,4 @@ SceneRoots:
   - {fileID: 1187660837}
   - {fileID: 1560425565}
   - {fileID: 560244962}
+  - {fileID: 916078923}
