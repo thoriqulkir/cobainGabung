@@ -168,6 +168,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Checkpoint 3/LaboratoriumDone.unity
     guid: 38aa0191530e292468d4171809481d2a
   - enabled: 1
+    path: Assets/Scenes/Cutcene akhir/Credits.unity
+    guid: 43ebbf3724b10834992bdca4bdf1a266
+  - enabled: 1
     path: Assets/Scenes/Cutcene akhir/Ruangtengah akhir.unity
     guid: b1cd7a92ca91ed84cb716e84d439b7d6
   - enabled: 1
