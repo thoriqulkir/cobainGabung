@@ -167,4 +167,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Checkpoint 3/LaboratoriumDone.unity
     guid: 38aa0191530e292468d4171809481d2a
+  - enabled: 1
+    path: Assets/Scenes/Cutcene akhir/Ruangtengah akhir.unity
+    guid: b1cd7a92ca91ed84cb716e84d439b7d6
+  - enabled: 1
+    path: Assets/Scenes/Cutcene akhir/Ruangtengah akhir (dialog).unity
+    guid: cd33f5ced09e56c40a55a7ee1e852773
+  - enabled: 1
+    path: Assets/Scenes/Cutcene akhir/Ruangtengah akhir (after dialog).unity
+    guid: 631b4dd0c1239d24ba636f2726de04b9
+  - enabled: 1
+    path: Assets/Scenes/Cutcene akhir/Ruangtengah akhir (monolog).unity
+    guid: a68092b13c597d44a9ddf559afe2c153
+  - enabled: 1
+    path: Assets/Scenes/Cutcene akhir/Ruangtengah akhir (objektif).unity
+    guid: e936cff45f17ec54ebb9b17070d0dbe4
   m_configObjects: {}
