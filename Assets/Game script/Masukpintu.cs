@@ -14,7 +14,7 @@ public class Masukpintu : MonoBehaviour
     public static bool kunciKepsekDiambil = false;
     public static bool kunciRSDiambil = false;
     public static bool puzzlePieceDiambil = false;
-    private static bool jigsawPuzzleCompleted = false;
+    public static bool jigsawPuzzleCompleted = false;
     public static bool kunciLabDiambil = false;
     public static bool cairanGembokDiambil = false;
 

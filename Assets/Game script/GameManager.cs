@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
             // Display message that no saved game exists
             if (messageText != null)
             {
-                messageText.text = "Save Game Not Found";
+                messageText.text = "Save Game Tidak Ditemukan";
                 StartCoroutine(HideMessageAfterDelay(1f));
             }
             Debug.Log("No saved game");
@@ -51,9 +51,15 @@ public class GameManager : MonoBehaviour
         Masukpintu.kunciKamarDiambil = false;
         Masukpintu.lockpickDiambil = false;
         SimpleLockScript.isPuzzleSolved = false;
+        Masukpintu.kunciKepsekDiambil = false;
+        Masukpintu.kunciRSDiambil = false;
+        Masukpintu.puzzlePieceDiambil = false;
+        Masukpintu.jigsawPuzzleCompleted = false;
+        Masukpintu.kunciLabDiambil = false;
+        Masukpintu.cairanGembokDiambil = false;
 
         // Load the initial scene
-        SceneManager.LoadScene("Cutscene");
+        SceneManager.LoadScene("Cutscene awal");
 
         Debug.Log("Game Started");
     }
