@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 63ee33bab1d640b468ed65f67470a0fa
   - enabled: 1
-    path: Assets/Scenes/Checkpoint 1/Cutscene.unity
-    guid: d302a1c4c42ff3a4e93a706235e289df
+    path: Assets/Scenes/Cutscene awal/Cutscene awal.unity
+    guid: 3f04b42fae064bc45abe7db3620c5b61
   - enabled: 1
     path: Assets/Scenes/Checkpoint 1/Kamartidur.unity
     guid: 403a88737b0c9b540aabd90db73b6d5b
