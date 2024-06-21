@@ -5192,7 +5192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PintuTengah2: {fileID: 823348597}
   masukPintuScript: {fileID: 1869487049}
-  monologScript: {fileID: 0}
+  monologScript: {fileID: 552613879}
   playerisclose: 0
 --- !u!1 &1103110038
 GameObject:
