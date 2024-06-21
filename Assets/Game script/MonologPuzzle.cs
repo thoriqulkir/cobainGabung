@@ -43,9 +43,14 @@ public class MonologPuzzle : MonoBehaviour
         {
             return;
         }
+
+        if (Masukpintu.kunciKepsekDiambil)
+        {
+            return;
+        }
         
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
-        {
+        {   
             if (dialogpanel.activeInHierarchy)
             {
                 zeroText();

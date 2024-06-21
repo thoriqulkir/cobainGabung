@@ -6,7 +6,7 @@ public class Lockpick : MonoBehaviour
 {
     public GameObject PintuTengah2;
     public Masukpintu masukPintuScript;
-    public Monolog monologScript;
+    public MonologPuzzle monologScript;
     
     public bool playerisclose;
 
@@ -19,8 +19,7 @@ public class Lockpick : MonoBehaviour
             // Panggil metode StartMonolog setelah mengambil kunci
             if (monologScript != null)
             {
-                monologScript.isKeyObject = true;
-                monologScript.StartMonolog();
+                monologScript.MulaiMonologDiakhir();
             }
 
             // Gunakan coroutine untuk menunda penghilangan objek
@@ -31,7 +30,7 @@ public class Lockpick : MonoBehaviour
     private IEnumerator HideObjectAfterDelay()
     {
         // Tunggu sebentar agar monolog bisa muncul
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.7f);
 
         this.gameObject.SetActive(false);
 

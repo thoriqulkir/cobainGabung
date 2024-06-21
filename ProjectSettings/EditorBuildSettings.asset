@@ -27,9 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Checkpoint 1/Kamarmandi.unity
     guid: f51d663c75c3aec4784709dcfb9c31c7
   - enabled: 1
-    path: Assets/Scenes/Checkpoint 1/Ruangtengah3.unity
-    guid: 5207ca77f47d6664ca0324ac86f27753
-  - enabled: 1
     path: Assets/Scenes/Checkpoint 1/Cutscene Perumahan.unity
     guid: c9de347f316ff5e40a5be3133b6020bc
   - enabled: 1
@@ -99,6 +96,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Checkpoint 2/KotaDariSekolah.unity
     guid: a3ebc61850935b04fa1a2181b0ce87d6
   - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/Kota Dari RS.unity
+    guid: e30346a45c68ff1429673ebdf4ba22c7
+  - enabled: 1
+    path: Assets/Scenes/Checkpoint 3/Perumahan Dari Kota.unity
+    guid: 76207fba11d50d54585e9715c44aa14c
+  - enabled: 1
     path: Assets/Scenes/Checkpoint 3/RumahSakit.unity
     guid: 7bb2ab7acb03be34481841cb7c7dfaf8
   - enabled: 1
@@ -167,6 +170,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Checkpoint 3/LaboratoriumDone.unity
     guid: 38aa0191530e292468d4171809481d2a
+  - enabled: 1
+    path: Assets/Scenes/Cutcene akhir/Kamartidur akhir.unity
+    guid: 29e421314dbe34d45bf006eadb576037
   - enabled: 1
     path: Assets/Scenes/Cutcene akhir/Credits.unity
     guid: 43ebbf3724b10834992bdca4bdf1a266

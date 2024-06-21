@@ -11,6 +11,9 @@ public class LifeCounter : MonoBehaviour
 
     // Reference to the death screen UI
     public GameObject deathScreen;
+    // Reference to the pause button UI
+    public GameObject pauseButton;
+
     private GameManager gameManager;
 
     private void Start()
@@ -74,6 +77,12 @@ public class LifeCounter : MonoBehaviour
         // Activate the death screen UI
         deathScreen.SetActive(true);
 
+        // Deactivate the pause button UI
+        if (pauseButton != null)
+        {
+            pauseButton.SetActive(false);
+        }
+
         // Optionally, pause the game
         Time.timeScale = 0f;
     }
@@ -87,13 +96,29 @@ public class LifeCounter : MonoBehaviour
         if (PlayerPrefs.GetInt("CheckpointReached", 0) == 1)
         {
             // Reload the checkpoint scene
-            Masukpintu.LoadCheckpoint();
-            SceneManager.LoadScene("Perumahan");
+            string lastScene = PlayerPrefs.GetString("LastScene");
+            SceneManager.LoadScene(lastScene);
         }
         else
         {
-            // Load the initial cutscene scene
-            SceneManager.LoadScene("Cutscene");
+            // Reset all PlayerPrefs data
+            PlayerPrefs.DeleteAll();
+
+            // Reset static variables if needed
+            Masukpintu.kunciKamarDiambil = false;
+            Masukpintu.lockpickDiambil = false;
+            SimpleLockScript.isPuzzleSolved = false;
+            Masukpintu.kunciKepsekDiambil = false;
+            Masukpintu.kunciRSDiambil = false;
+            Masukpintu.puzzlePieceDiambil = false;
+            Masukpintu.jigsawPuzzleCompleted = false;
+            Masukpintu.kunciLabDiambil = false;
+            Masukpintu.cairanGembokDiambil = false;
+
+            // Load the initial scene
+            SceneManager.LoadScene("Kamartidur");
+
+            Debug.Log("Game Restarted");
         }
     }
 

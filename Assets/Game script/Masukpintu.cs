@@ -351,7 +351,27 @@ public class Masukpintu : MonoBehaviour
         {
             isClose = true;
         }
-
+        else if (col.GetComponent<KeKotaDariRS>())
+        {
+            scenetoload = "Kota Dari RS";
+            bolehmasuk = true;
+        }
+        
+        else if (col.GetComponent<LorongDariKota>())
+        {
+            scenetoload = "Perumahan Dari Kota";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuKeRuangAkhir>())
+        {
+            scenetoload = "Ruangtengah akhir";
+            bolehmasuk = true;
+        }
+        else if (col.GetComponent<PintuKeKamarAkhir>())
+        {
+            scenetoload = "Kamartidur akhir";
+            bolehmasuk = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col) 
@@ -369,7 +389,8 @@ public class Masukpintu : MonoBehaviour
             || col.GetComponent<PintuRSLt2>() || col.GetComponent<PintuKeRP1>() || col.GetComponent<PintuKeRP2>() || col.GetComponent<PintuKeRP3>() 
             || col.GetComponent<PintuKeRP4>() || col.GetComponent<PintuRSLt3>() || col.GetComponent<TanggaRS3KeLt2>() || col.GetComponent<PintuKamarMayat>() 
             || col.GetComponent<PintuRP3>() || col.GetComponent<PintuRP4>() || col.GetComponent<PintuRP1>() || col.GetComponent<PintuRP2>() 
-            || col.GetComponent<PintuLab>() || col.GetComponent<PintuKeluarRS>() || col.GetComponent<Brankas>())
+            || col.GetComponent<PintuLab>() || col.GetComponent<PintuKeluarRS>() || col.GetComponent<Brankas>() || col.GetComponent<KeKotaDariRS>() 
+            || col.GetComponent<LorongDariKota>() || col.GetComponent<PintuKeRuangAkhir>() || col.GetComponent<PintuKeKamarAkhir>())
         {
             bolehmasuk = false;
             isClose = false;
