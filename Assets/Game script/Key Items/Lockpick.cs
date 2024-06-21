@@ -6,7 +6,7 @@ public class Lockpick : MonoBehaviour
 {
     public GameObject PintuTengah2;
     public Masukpintu masukPintuScript;
-    public MonologPuzzle monologScript;
+    public MonologItem monologScript;
     
     public bool playerisclose;
 

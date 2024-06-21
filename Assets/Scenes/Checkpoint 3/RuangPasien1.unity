@@ -597,8 +597,8 @@ Transform:
   m_GameObject: {fileID: 448493575}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.8502, y: 22.3773, z: 0}
-  m_LocalScale: {x: 110.45846, y: 16.009136, z: 1}
+  m_LocalPosition: {x: -11.1624, y: 22.3773, z: 0}
+  m_LocalScale: {x: 123.08386, y: 16.009136, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1913495002}
@@ -1310,7 +1310,7 @@ Transform:
   m_GameObject: {fileID: 922675657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.450739, y: 5.13361, z: -10}
+  m_LocalPosition: {x: 26.450718, y: 5.13361, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1518,7 +1518,7 @@ Transform:
   m_GameObject: {fileID: 950802474}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -69.4, y: 0, z: 0}
+  m_LocalPosition: {x: -84.4, y: 0, z: 0}
   m_LocalScale: {x: 42.41022, y: 61.29186, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2292,7 +2292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 758, y: 277}
+  m_AnchoredPosition: {x: 758, y: 304.8}
   m_SizeDelta: {x: 114, y: 114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299938670
@@ -2419,6 +2419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1394589936}
+  pauseButton: {fileID: 1299938668}
 --- !u!4 &1367760275
 Transform:
   m_ObjectHideFlags: 0
@@ -3314,7 +3315,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.1287041, y: 5.860964}
+  m_Offset: {x: 1.3898907, y: 5.1296496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3325,7 +3326,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.057785, y: 17.173443}
+  m_Size: {x: 7.8935738, y: 15.710816}
   m_EdgeRadius: 0
 --- !u!4 &1771216637
 Transform:
@@ -3515,7 +3516,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 075db9bc00099ac4288959c5f5f29340, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb457c25e854cdb4f9b47dccb16d0470, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3535,8 +3536,8 @@ Transform:
   m_GameObject: {fileID: 1808058315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.9169, y: 5.6555, z: 0}
-  m_LocalScale: {x: 13.4005575, y: 12.113244, z: 1.8676295}
+  m_LocalPosition: {x: 8.5, y: 6.5, z: 0}
+  m_LocalScale: {x: 4, y: 3.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3649,6 +3650,7 @@ MonoBehaviour:
   - {fileID: 1390304602}
   livesRemaining: 3
   deathScreen: {fileID: 768413268}
+  pauseButton: {fileID: 1299938668}
 --- !u!1 &1869767309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,19 +4190,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752635444640799550, guid: 3e02f6f89026b804587a3f7a05c138f2, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: -57.387062
+      value: -69.492645
       objectReference: {fileID: 0}
     - target: {fileID: 5752635444640799550, guid: 3e02f6f89026b804587a3f7a05c138f2, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 2.5515308
+      value: 2.205658
       objectReference: {fileID: 0}
     - target: {fileID: 5752635444640799550, guid: 3e02f6f89026b804587a3f7a05c138f2, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -57.50161
+      value: -68.91545
       objectReference: {fileID: 0}
     - target: {fileID: 5752635444640799550, guid: 3e02f6f89026b804587a3f7a05c138f2, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -55.111225
+      value: -56.494724
       objectReference: {fileID: 0}
     - target: {fileID: 5752635444640799550, guid: 3e02f6f89026b804587a3f7a05c138f2, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x

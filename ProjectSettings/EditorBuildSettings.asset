@@ -43,25 +43,25 @@ EditorBuildSettings:
     guid: e56be3265f78d0941ad1ea1ec39c29de
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah1DariLt2.unity
-    guid: b33162f1a3375b247b0019ea6dc073ea
+    guid: 2df05bf0218998542aff48031ebbeebb
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah1DariWarehouse.unity
-    guid: 670034965407a074cafc5461ae1eca04
+    guid: 537e3e54cc7fa804ab9c9f45c346d484
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah2.unity
-    guid: 9ebb2e752d4f1e843b3a7dcb51aa2450
+    guid: 9f59c7073e2bb2d49b92b7ec810a43ff
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah2DariKelas1.unity
-    guid: cbfff520ac5063840a08a6bbfa00c9a6
+    guid: 9ebb2e752d4f1e843b3a7dcb51aa2450
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah2DariKelas2.unity
-    guid: fc36b554fe295ca4cb77d1c6791e42af
+    guid: e6a91d40ea397bb40807a8a0ab5adc50
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah2DariKepsek.unity
-    guid: ff283985564e9714fb60458840f4aa18
+    guid: 05ce016598ff40e47bd591a5ad3900f5
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah2DariLt3.unity
-    guid: e8800853c6fa5c642872cc308e975815
+    guid: 798b8eecb96882a4dbd3715943868890
   - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah3.unity
     guid: b8a3cfa42269b8649a4a73f2496c93b7

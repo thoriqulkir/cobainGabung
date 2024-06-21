@@ -198,7 +198,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &56262352
+--- !u!1 &79608799
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,22 +206,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 56262354}
-  - component: {fileID: 56262353}
+  - component: {fileID: 79608801}
+  - component: {fileID: 79608800}
   m_Layer: 0
-  m_Name: notifikasi gembok
+  m_Name: notifikasi tanda tanya (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &56262353
+--- !u!212 &79608800
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56262352}
+  m_GameObject: {fileID: 79608799}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -256,7 +256,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e42e14837d3ca504bb0a0931096ceec7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 748e2459b32636b478a1b201d55e3796, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -267,16 +267,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &56262354
+--- !u!4 &79608801
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56262352}
+  m_GameObject: {fileID: 79608799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.3, y: 12.93, z: 0}
+  m_LocalPosition: {x: 15.31, y: 13, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2552,7 +2552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 552613880}
-  - component: {fileID: 552613879}
+  - component: {fileID: 552613881}
   m_Layer: 0
   m_Name: MonologItem
   m_TagString: Untagged
@@ -2560,24 +2560,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &552613879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552613878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6083b33894e80834faea54366a4462d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogpanel: {fileID: 1196657942}
-  diloguetext: {fileID: 649257365}
-  dialog:
-  - Aku mendapat lockpick dari laci
-  wordspeed: 0.06
-  playerisclose: 0
 --- !u!4 &552613880
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,6 +2575,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552613881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552613878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0f79708024462438de7e59cb389b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogpanel: {fileID: 1196657942}
+  diloguetext: {fileID: 649257365}
+  dialog:
+  - Aku mendapat lockpick dari laci
+  wordspeed: 0.06
+  playerisclose: 0
 --- !u!1 &587243388
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,7 +5192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PintuTengah2: {fileID: 823348597}
   masukPintuScript: {fileID: 1869487049}
-  monologScript: {fileID: 552613879}
+  monologScript: {fileID: 552613881}
   playerisclose: 0
 --- !u!1 &1103110038
 GameObject:
@@ -8927,8 +8927,8 @@ SceneRoots:
   - {fileID: 1361227009}
   - {fileID: 1060759447}
   - {fileID: 626643875}
+  - {fileID: 79608801}
   - {fileID: 1030418244}
-  - {fileID: 56262354}
   - {fileID: 517066031}
   - {fileID: 1462362208}
   - {fileID: 400879412}

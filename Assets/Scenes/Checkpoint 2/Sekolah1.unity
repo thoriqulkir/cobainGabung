@@ -3394,7 +3394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1598543946}
-  pauseButton: {fileID: 0}
+  pauseButton: {fileID: 1965023401}
 --- !u!4 &1548092078
 Transform:
   m_ObjectHideFlags: 0
@@ -4382,7 +4382,7 @@ MonoBehaviour:
   - {fileID: 180353911}
   livesRemaining: 3
   deathScreen: {fileID: 1840848306}
-  pauseButton: {fileID: 0}
+  pauseButton: {fileID: 1965023401}
 --- !u!1 &1869767309
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class KunciKamar : MonoBehaviour
 {
     public GameObject PintuKamar;
     public Masukpintu masukPintuScript;
-    public MonologPuzzle monologScript;
+    public MonologItem monologScript;
     
     public bool playerisclose;
 

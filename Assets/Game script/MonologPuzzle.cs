@@ -19,32 +19,7 @@ public class MonologPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Masukpintu.cairanGembokDiambil)
-        {
-            return;
-        }
-        
-        if (Masukpintu.kunciLabDiambil)
-        {
-            return;
-        }
-        
-        if (Masukpintu.puzzlePieceDiambil)
-        {
-            return;
-        }
-        
-        if (Masukpintu.kunciRSDiambil)
-        {
-            return;
-        }
-
         if (SimpleClock.isPuzzleSolved)
-        {
-            return;
-        }
-
-        if (Masukpintu.kunciKepsekDiambil)
         {
             return;
         }
