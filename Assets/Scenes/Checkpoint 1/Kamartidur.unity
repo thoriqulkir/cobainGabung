@@ -557,7 +557,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &172223254
 RectTransform:
@@ -2361,7 +2361,7 @@ Transform:
   m_GameObject: {fileID: 922675657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.757883, y: 3.81598, z: -10}
+  m_LocalPosition: {x: -26.7, y: 6.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2740,6 +2740,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6225911835686782229, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
+      propertyPath: monolog
+      value: 
+      objectReference: {fileID: 474575460}
     - target: {fileID: 6225911835686782229, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
       propertyPath: monologScript
       value: 

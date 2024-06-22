@@ -17,6 +17,8 @@ public class Popup : MonoBehaviour
             return;
         }
 
+        
+        
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {
             popupbox.SetActive(true);
@@ -42,6 +44,19 @@ public class Popup : MonoBehaviour
             {
                 Debug.LogError("Animator is not assigned.");
             }
+        }
+    }
+
+    public void StartPopUp()
+    {
+        popupbox.SetActive(true);
+        if (anim != null)
+        {
+            anim.SetTrigger("pop");
+        }
+        else
+        {
+            Debug.LogError("Animator is not assigned.");
         }
     }
 

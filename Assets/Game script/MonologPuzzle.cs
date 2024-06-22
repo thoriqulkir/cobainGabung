@@ -19,10 +19,10 @@ public class MonologPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SimpleClock.isPuzzleSolved)
-        {
-            return;
-        }
+        // if (SimpleClock.isPuzzleSolved)
+        // {
+        //     return;
+        // }
         
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {   

@@ -21,6 +21,7 @@ public class Masukpintu : MonoBehaviour
     public SimpleLockScript simpleLockScript;
 
     public MonologPuzzle monologPuzzle;
+    public Monolog monolog;
 
     public JigsawScript jigsawScript;
 
@@ -51,12 +52,14 @@ public class Masukpintu : MonoBehaviour
         {
             if (kunciKamarDiambil)
             {
+                monolog.gameObject.SetActive(false);
                 scenetoload = "Ruangtengah";
                 bolehmasuk = true;
             }
             else
             {
                 bolehmasuk = false;
+                monolog.gameObject.SetActive(true);
             }              
         }
         else if (col.GetComponent<PintuTengah>())
@@ -73,12 +76,14 @@ public class Masukpintu : MonoBehaviour
         {
             if (lockpickDiambil)
             {
+                monolog.gameObject.SetActive(false);
                 scenetoload = "Kamarmandi";
                 bolehmasuk = true;
             }
             else
             {
                 bolehmasuk = false;
+                monolog.gameObject.SetActive(true);
             }
         }
         else if (col.GetComponent<PintuRumah>())
@@ -114,11 +119,13 @@ public class Masukpintu : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("ClockPuzzleSolved", 0) == 1)
             {
+                monologPuzzle.gameObject.SetActive(false);
                 scenetoload = "Warehouse";
                 bolehmasuk = true;
             }
             else
             {
+                monologPuzzle.gameObject.SetActive(true);
                 bolehmasuk = false;
             }
         }
@@ -147,11 +154,13 @@ public class Masukpintu : MonoBehaviour
         {
             if (kunciKepsekDiambil)
             {
+                monolog.gameObject.SetActive(false);
                 scenetoload = "Kepsek";
                 bolehmasuk = true;
             }
             else
             {
+                monolog.gameObject.SetActive(true);
                 bolehmasuk = false;
             }
         }
@@ -228,11 +237,13 @@ public class Masukpintu : MonoBehaviour
         {
             if (kunciRSDiambil)
             {
+                monolog.gameObject.SetActive(false);
                 scenetoload = "RSLt1";
                 bolehmasuk = true;
             }
             else
             {
+                monolog.gameObject.SetActive(true);
                 bolehmasuk = false;
             }
         }
@@ -267,11 +278,13 @@ public class Masukpintu : MonoBehaviour
         {
             if (kunciLabDiambil)
             {
+                monolog.gameObject.SetActive(false);
                 scenetoload = "Laboratorium";
                 bolehmasuk = true;
             }
             else
             {
+                monolog.gameObject.SetActive(true);
                 bolehmasuk = false;
             }
         }
@@ -299,11 +312,13 @@ public class Masukpintu : MonoBehaviour
         {
             if (cairanGembokDiambil)
             {
+                monolog.gameObject.SetActive(false);
                 scenetoload = "KamarMayat";
                 bolehmasuk = true;
             }
             else
             {
+                monolog.gameObject.SetActive(true);
                 bolehmasuk = false;
             }
         }

@@ -21,7 +21,7 @@ public class KunciRS : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerisclose)
         {
-            Debug.Log("Mendapat Kunci Ruang Rumah Sakit");
+            Debug.Log("Mendapat Kunci Rumah Sakit");
             PlayerPrefs.SetInt("KunciRSDiambil", 1); // Simpan status kunci
             PlayerPrefs.Save();
             //this.gameObject.SetActive(false); // Sembunyikan atau hapus objek kunci
