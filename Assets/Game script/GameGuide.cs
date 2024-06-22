@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameGuide : MonoBehaviour
@@ -10,6 +11,10 @@ public class GameGuide : MonoBehaviour
     {
         gameGuidePanel.SetActive(true);
         Time.timeScale = 0f;
+        if (Input.GetMouseButton(0))
+        {
+            Close();
+        }
     }
 
     public void Close()

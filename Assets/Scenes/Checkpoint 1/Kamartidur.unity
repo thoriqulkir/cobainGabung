@@ -242,11 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0f79708024462438de7e59cb389b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogpanel: {fileID: 611900619}
-  diloguetext: {fileID: 1399783783}
-  dialog:
-  - Aku mendapat kunci kamarku
-  wordspeed: 0.06
+  dialogpanel: {fileID: 0}
+  diloguetext: {fileID: 0}
+  dialog: []
+  wordspeed: 0
   playerisclose: 0
 --- !u!1 &18059323
 GameObject:
@@ -2351,12 +2350,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bdd8155e665114db5f906c8402b8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 616460222}
-  defaultClip: {fileID: 8300000, guid: 6088018f70bc8b24a91969cc3d2c1298, type: 3}
-  secondaryClip: {fileID: 8300000, guid: 59a7aefa477f318449d009320e04a568, type: 3}
-  thirdClip: {fileID: 8300000, guid: 559516b6ffa7d564eadb8cacf3628e78, type: 3}
-  fourthClip: {fileID: 8300000, guid: 40e221b4b85bb1c4e837c4e87f47943a, type: 3}
-  fifthClip: {fileID: 8300000, guid: 5d35b7f609259ed42acdf43be48ce694, type: 3}
+  audioSource: {fileID: 0}
+  defaultClip: {fileID: 0}
+  secondaryClip: {fileID: 0}
+  thirdClip: {fileID: 0}
+  fourthClip: {fileID: 0}
+  fifthClip: {fileID: 0}
 --- !u!1 &646509910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,7 +3032,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b8e0dab63dcb3e24f894552b954c3490, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f91ce744fbb8e64eb85a8f2c5764de5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
