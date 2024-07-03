@@ -4999,7 +4999,7 @@ GameObject:
   - component: {fileID: 1771216636}
   - component: {fileID: 1771216638}
   m_Layer: 0
-  m_Name: PintuKeKota
+  m_Name: PintuKeKotaLt1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5074,7 +5074,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1771216635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e1a11c7e2d7bd4a80aa8292db20647, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a82688d6d0a02498f9ca1d1f97c9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1808058315
@@ -5314,6 +5314,10 @@ PrefabInstance:
     - target: {fileID: 6225911835686782229, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
       propertyPath: simpleLockScript
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133258398095499958, guid: 47824aaf6d6c1de458f8d7eda0c2191f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

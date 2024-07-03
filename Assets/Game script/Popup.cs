@@ -8,7 +8,9 @@ public class Popup : MonoBehaviour
     public Animator anim;
     public bool playerisclose;
 
-    private void Update() 
+    private bool isAnimating = false;
+
+    private void Update()
     {
         // Pastikan popup tidak muncul saat game di-pause
         if (PauseMenu.isPaused)
@@ -17,9 +19,7 @@ public class Popup : MonoBehaviour
             return;
         }
 
-        
-        
-        if (Input.GetKeyDown(KeyCode.E) && playerisclose)
+        if (Input.GetKeyDown(KeyCode.E) && playerisclose && !isAnimating)
         {
             popupbox.SetActive(true);
             if (anim != null)
@@ -31,8 +31,8 @@ public class Popup : MonoBehaviour
                 Debug.LogError("Animator is not assigned.");
             }
         }
-        
-        if (Input.GetMouseButton(0) && popupbox.activeSelf)
+
+        if (Input.GetMouseButton(0) && popupbox.activeSelf && !isAnimating)
         {
             if (anim != null)
             {
@@ -60,7 +60,7 @@ public class Popup : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -68,7 +68,7 @@ public class Popup : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) 
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -79,13 +79,20 @@ public class Popup : MonoBehaviour
     // Coroutine to deactivate popupbox after animation
     private IEnumerator DeactivateAfterAnimation()
     {
+        isAnimating = true;
+        
         // Wait until the end of the frame to ensure animation has started
         yield return new WaitForEndOfFrame();
 
         // Wait until the animation is finished
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1);
 
+        // Reset the animation trigger
+        anim.ResetTrigger("close");
+
         // Deactivate the popupbox
         popupbox.SetActive(false);
+
+        isAnimating = false;
     }
 }

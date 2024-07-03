@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Checkpoint 2/Perpustakaan.unity
     guid: 2cacc270eaff7e243b980257a4cf68e7
   - enabled: 1
+    path: Assets/Scenes/Checkpoint 2/KotaDariSekolahLt1.unity
+    guid: 977f43af17578df43836909b43baa46e
+  - enabled: 1
     path: Assets/Scenes/Checkpoint 2/Sekolah1.unity
     guid: e56be3265f78d0941ad1ea1ec39c29de
   - enabled: 1
